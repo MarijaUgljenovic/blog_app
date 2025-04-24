@@ -1,35 +1,37 @@
 <script>
+  import { goto } from '$app/navigation';
     let email = "";
     let password = "";
     let error = "";
 
-    async function handleLogin(){
-        const res = await fetch ('http://localhost:3000/auth/login',{
+    async function handleLogin() {
+      const res = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password
+        }),
+        credentials: 'include'
+      });
 
-            method:'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              email: email,
-              password: password
-           }),
-
-            credentials: 'include'
-        });
-
-        const data = await res.json();
-       
       if (res.ok) {
-        
+        const data = await res.json(); 
         console.log('Login success:', data);
 
         localStorage.setItem('token', data.token);
-        window.location.href = '/dashboard';
-      }else{
-        error = 'Login faild. Check your credentials.';
+        goto('/homePage');
+      } else if (res.status === 403) {
+          error = 'Wrong password.';
+      } else if (res.status === 400) {
+          error = 'Missing or invalid credentials.';
+      } else {
+          error = 'Login failed. Please try again.';
       }
     }
+
 </script>
 
 <h1>Login</h1>
