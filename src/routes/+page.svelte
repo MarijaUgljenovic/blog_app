@@ -19,11 +19,11 @@
   
     .homebar {
         width: 100%;
-        background-color: #02210f;
+        background-color: #1f1e1e;
         padding: 1rem 2rem;
         display: flex;
         align-items: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         position: fixed;
         top: 0;
         left: 0;
@@ -67,17 +67,18 @@
     .hero {
         width: 100vw;
         margin: 0;
-        padding: 6rem 0 2rem 0; /* top padding zbog fiksne navigacije */
+        height: 100vh;
+        padding: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: linear-gradient(to right, #053318, #011d0a);
-        min-height: calc(100vh - 4rem); /* ili koliko ti je visok navbar */
+        background: rgb(4, 44, 34);
         overflow: hidden;
         color: white;
     }
   
     .hero-text {
+        margin-left: 6vw;
         flex: 1;
     }
   
@@ -94,8 +95,38 @@
         border-radius: 1rem;
         display: block;
         object-fit: contain;
+
+        /* Mek prelaz na levoj ivici slike */
+        -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 30%);
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 30%);
+
+        opacity: 0;
+        transform: translateX(30px);
+        animation: fadeInSmooth 1.2s ease-out forwards;
     }
   
+    @keyframes fadeInSmooth {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInMask {
+    0% {
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 0%);
+        mask-image: linear-gradient(to right, transparent 0%, black 0%);
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%);
+        mask-image: linear-gradient(to right, transparent 0%, black 15%);
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
@@ -120,11 +151,11 @@
   
   <div class="hero">
         <div class="hero-text">
-            <h1>Welcome!</h1>
-            <p>Create your style.</p>
+            <h1>OnePlace</h1>
+            <p>Explore your path.</p>
         </div>
             <div class="hero-image">
-            <img src="/img/img1.jpg" alt="nature" />
+            <img src="/img/img6.jpg" alt="nature" />
         </div>
   </div>
   

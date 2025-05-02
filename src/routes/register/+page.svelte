@@ -5,15 +5,46 @@
   let password = "";
   let confirmPassword = "";
   let dateOfBirth = "";
+  let usernameError = "";
+  let emailError = "";
+  let passwordError = "";
+  let confirmPasswordError = "";
   let gender = "";
   let error = "";
   let success = "";
 
   async function handleRegister() {
+    error = "";
+    success = "";
+    let hasError = false;
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+    if (!passwordRegex.test(password)) {
+      error = "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
+      hasError = true;
+      hasError = true;
+    }
+
     if (password !== confirmPassword) {
       error = "Passwords do not match.";
-      return;
+      hasError = true;
     }
+
+    const emailRegex = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@gmail\.com$/;
+    if (!emailRegex.test(email)) {
+      error = 'Email must be in the form of "name@gmail.com" or "name.name@gmail.com".';
+      hasError = true;
+    }
+
+    const usernameRegex = /^[a-z0-9._]+$/;
+    if (!usernameRegex.test(username)) {
+      error = "Username can only contain lowercase letters, numbers, dots (.) and underscores (_).";
+      hasError = true;
+    }
+
+    if (hasError) return;
+
+
 
     const res = await fetch('http://localhost:3000/auth/register', {
       method: 'POST',
@@ -45,27 +76,41 @@
   <a href="/" class="home-link">Home</a>
 </div>
 
+
+
 <form on:submit|preventDefault={handleRegister} class="register-form">
   <h2>Register</h2>
 
   <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" id="username" bind:value={username} name="username" placeholder="Enter your username" required />
+    <input type="text" id="username" bind:value={username} required />
+    {#if usernameError}
+      <p class="field-error">{usernameError}</p>
+    {/if}
   </div>
 
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" id="email" bind:value={email} name="email" placeholder="Enter your email" required />
+    <input type="text" id="email" bind:value={email} required />
+    {#if emailError}
+      <p class="field-error">{emailError}</p>
+    {/if}  
   </div>
 
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" id="password" bind:value={password} name="password" placeholder="Enter your password" required />
+    <input type="text" id="password" bind:value={password} required />
+    {#if passwordError}
+      <p class="field-error">{passwordError}</p>
+    {/if}    
   </div>
 
   <div class="form-group">
     <label for="confirmPassword">Confirm Password</label>
-    <input type="password" id="confirmPassword" bind:value={confirmPassword} name="confirmPassword" placeholder="Confirm your password" required />
+    <input type="text" id="confirmPassword" bind:value={confirmPassword} required />
+    {#if confirmPasswordError}
+      <p class="field-error">{confirmPasswordError}</p>
+    {/if}   
   </div>
 
   <div class="form-group">
@@ -105,13 +150,18 @@
     width: 100%;
     height: 100%; 
     overflow-x: hidden;
-    background: linear-gradient(to right, #053318, #011d0a);
+    background: rgb(4, 44, 34);
     font-family: sans-serif;
     display: flex; 
     justify-content: center; 
     align-items: center; 
   }
 
+    .field-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
   .register-form {
     max-width: 400px;
     padding: 20px;
@@ -123,11 +173,11 @@
 
   .homebar {
     width: 100%;
-    background-color: #02210f;
+    background-color: #1f1e1e;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
     left: 0;
@@ -172,7 +222,7 @@
   .submit-btn {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #1f1e1e;
     color: white;
     border: none;
     border-radius: 4px;
@@ -181,7 +231,7 @@
   }
 
   .submit-btn:hover {
-    background-color: #0056b3;
+    background-color: #302e2e;
   }
 
   .error-message {

@@ -68,7 +68,7 @@
     width: 100%;
     height: 100%; 
     overflow-x: hidden;
-    background: linear-gradient(to right, #053318, #011d0a);
+    background: lrgb(4, 44, 34);
     font-family: sans-serif;
     display: flex; 
     justify-content: center; 
@@ -77,11 +77,11 @@
 
 .homebar {
     width: 100%;
-    background-color: #02210f;
+    background-color: #1f1e1e;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
     left: 0;
@@ -130,7 +130,7 @@
 .submit-btn {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #1f1e1e;
     color: white;
     border: none;
     border-radius: 4px;
@@ -139,7 +139,7 @@
 }
 
 .submit-btn:hover {
-    background-color: #0056b3;
+    background-color: #302e2e;
 }
 
 .error-message {
