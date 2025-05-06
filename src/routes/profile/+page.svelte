@@ -1,4 +1,3 @@
-
 <script>
  
 </script>
@@ -14,7 +13,7 @@
       overflow-x: hidden;
       background-color: #011d0a;
       font-family: sans-serif;
-      
+     
   }
 
   .homebar {
@@ -70,18 +69,18 @@
       overflow: hidden;
       color: white;
   }
+
 </style>
+  <div class="homebar">
+    <a href="/homePage" class="home-link">Home</a>
+  </div>
+  <div class="hero">
+    
+  </div>
 
-
-<div class="homebar">
-  <a href="/homePage" class="home-link">Home</a>
-</div>
-
-<div class="hero"></div>
-
-<div class="top-bar">
-  <a href="/profile">
-    <img src="/img/profile-icon.png" alt="Profile" class="profile-icon" />
-  </a>
-</div>
+  <div class="top-bar">
+    <a href="/profile">
+      <img src="/img/profile-icon.png" alt="Profile" class="profile-icon" />
+    </a>
+  </div>
 
