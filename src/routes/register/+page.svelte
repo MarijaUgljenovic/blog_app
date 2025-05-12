@@ -76,8 +76,6 @@
   <a href="/" class="home-link">Home</a>
 </div>
 
-
-
 <form on:submit|preventDefault={handleRegister} class="register-form">
   <h2>Register</h2>
 
@@ -150,7 +148,7 @@
     width: 100%;
     height: 100%; 
     overflow-x: hidden;
-    background: rgb(4, 44, 34);
+    background: rgb(102, 137, 138);
     font-family: sans-serif;
     display: flex; 
     justify-content: center; 

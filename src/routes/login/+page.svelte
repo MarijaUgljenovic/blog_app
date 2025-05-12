@@ -57,7 +57,7 @@
 
 
 <style>
-  /* GLOBALNI RESET */
+ 
 :global(*) {
     margin: 0;
     padding: 0;
@@ -68,7 +68,7 @@
     width: 100%;
     height: 100%; 
     overflow-x: hidden;
-    background: lrgb(4, 44, 34);
+    
     font-family: sans-serif;
     display: flex; 
     justify-content: center; 
@@ -99,7 +99,7 @@
       text-decoration: underline;
   }
 
-/* Stilovi za formu */
+
 .login-form {
     max-width: 400px;
     padding: 20px;
@@ -147,5 +147,19 @@
     text-align: center;
     margin-top: 10px;
 }
+
+
+.hero {
+      width: 100vw;
+      margin: 0;
+      height: 100vh;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgb(102, 137, 138);
+      overflow: hidden;
+      color: white;
+  }
 
 </style>

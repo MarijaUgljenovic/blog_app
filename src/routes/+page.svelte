@@ -11,8 +11,8 @@
   
     :global(html), :global(body) {
         width: 100%;
+        background: rgb(102, 137, 138);
         overflow-x: hidden;
-        background-color: #011d0a;
         font-family: sans-serif;
        
     }
@@ -72,7 +72,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgb(4, 44, 34);
+        background: rgb(6, 70, 67);
         overflow: hidden;
         color: white;
     }
@@ -141,7 +141,7 @@
   
   <!-- HTML -->
   <div class="homebar">
-        <a href="/" class="home-link">Home</a>
+        <a href="/" class="home-link">OnePlace</a>
   </div>
   
   <div class="top-bar">
