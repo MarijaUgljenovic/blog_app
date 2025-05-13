@@ -11,7 +11,6 @@
   
     :global(html), :global(body) {
         width: 100%;
-        background: rgb(102, 137, 138);
         overflow-x: hidden;
         font-family: sans-serif;
        
@@ -19,7 +18,7 @@
   
     .homebar {
         width: 100%;
-        background-color: #1f1e1e;
+        background-color: 353333;
         padding: 1rem 2rem;
         display: flex;
         align-items: center;
@@ -72,7 +71,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgb(6, 70, 67);
+        background: rgb(140, 133, 148);
         overflow: hidden;
         color: white;
     }

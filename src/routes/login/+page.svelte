@@ -33,6 +33,9 @@
   }
 </script>
 
+<div class="background-image"></div>
+<div class="background-overlay"></div>
+
 <div class="homebar">
   <a href="/" class="home-link">Home</a>
 </div>
@@ -68,16 +71,38 @@
     width: 100%;
     height: 100%; 
     overflow-x: hidden;
-    
     font-family: sans-serif;
     display: flex; 
     justify-content: center; 
     align-items: center; 
 }
 
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/img/poz3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -20;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -10;
+}
 .homebar {
     width: 100%;
-    background-color: #1f1e1e;
+    background-color: 353333;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;

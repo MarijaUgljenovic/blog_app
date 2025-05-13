@@ -80,7 +80,7 @@
 
   .homebar {
     width: 100%;
-    background-color: #1f1e1e;
+    background-color: 353333;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
@@ -189,7 +189,7 @@
   }
 
   .dropdown-menu a:hover {
-    text-decoration: underline;
+    color: #ffcc00;
   }
 
 
