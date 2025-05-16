@@ -1,6 +1,24 @@
 <script>
 </script>
-  
+<div class="homebar">
+    <a href="/" class="home-link">OnePlace</a>
+</div>
+
+<div class="top-bar">
+    <a href="/login" class="text-button">Login</a>
+    <a href="/register" class="text-button">Register</a>
+</div>
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>OnePlace</h1>
+        <p id="exp">Explore your path.</p>
+    </div>
+        <div class="hero-image">
+        <img src="/img/img6.jpg" alt="nature" />
+    </div>
+</div>
+
   <style>
     /* GLOBALNI RESET */
     :global(*) {
@@ -12,13 +30,12 @@
     :global(html), :global(body) {
         width: 100%;
         overflow-x: hidden;
-        font-family: sans-serif;
-       
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
     }
   
     .homebar {
         width: 100%;
-        background-color: 353333;
         padding: 1rem 2rem;
         display: flex;
         align-items: center;
@@ -33,7 +50,7 @@
         color: #e9e4ee;
         text-decoration: none;
         font-size: 1.2rem;
-        font-weight: bold;
+        font-weight: 600;
     }
   
     .home-link:hover {
@@ -66,19 +83,24 @@
     .hero {
         width: 100vw;
         margin: 0;
-        height: 100vh;
-        padding: 0;
+        height: 100vh;   
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgb(140, 133, 148);
+        background: rgb(113, 102, 126);
         overflow: hidden;
         color: white;
+        padding-left: 4vw;
     }
   
     .hero-text {
-        margin-left: 6vw;
+        display: flex;
+        
+        flex-direction: column;
         flex: 1;
+    }
+    #exp{
+        font-size: x-large;
     }
   
     .hero-image {
@@ -137,24 +159,4 @@
         margin-bottom: 2rem;
     }
   </style>
-  
-  <!-- HTML -->
-  <div class="homebar">
-        <a href="/" class="home-link">OnePlace</a>
-  </div>
-  
-  <div class="top-bar">
-        <a href="/login" class="text-button">Login</a>
-        <a href="/register" class="text-button">Register</a>
-  </div>
-  
-  <div class="hero">
-        <div class="hero-text">
-            <h1>OnePlace</h1>
-            <p>Explore your path.</p>
-        </div>
-            <div class="hero-image">
-            <img src="/img/img6.jpg" alt="nature" />
-        </div>
-  </div>
   

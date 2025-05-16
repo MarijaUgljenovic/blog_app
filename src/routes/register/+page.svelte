@@ -150,25 +150,26 @@
     width: 100%;
     height: 100%; 
     overflow-x: hidden;
-   
-    font-family: sans-serif;
     display: flex; 
     justify-content: center; 
     align-items: center; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    
   }
 
   .background-image {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('/img/poz3.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  z-index: -20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/img/poz3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -20;
 }
 
 .background-overlay {

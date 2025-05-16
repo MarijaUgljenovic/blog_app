@@ -71,10 +71,11 @@
     width: 100%;
     height: 100%; 
     overflow-x: hidden;
-    font-family: sans-serif;
     display: flex; 
     justify-content: center; 
     align-items: center; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
 }
 
 .background-image {
